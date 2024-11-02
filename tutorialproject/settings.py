@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-(=i$$5i4hn4=-n##dtyjuo3=6prg88tkeuf_%+n7jm+kg&!$)c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','.now.sh']
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -154,9 +154,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # Directory where collectstatic will place files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Directory where collectstatic will place files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles_build','static'),  # Example directory for static files
+    os.path.join(BASE_DIR,'static'),  # Example directory for static files
 ]
 
 # Default primary key field type
