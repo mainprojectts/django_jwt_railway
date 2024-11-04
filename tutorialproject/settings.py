@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-(=i$$5i4hn4=-n##dtyjuo3=6prg88tkeuf_%+n7jm+kg&!$)c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://drflive-production.up.railway.app']
+ALLOWED_HOSTS = ['drflive-production.up.railway.app']
 
 
 
