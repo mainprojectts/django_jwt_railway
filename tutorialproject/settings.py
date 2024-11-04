@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-(=i$$5i4hn4=-n##dtyjuo3=6prg88tkeuf_%+n7jm+kg&!$)c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://drflive-production.up.railway.app']
 
 
 
@@ -167,4 +167,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS=True
 CORS_ALLOW_CREDENTIALS=True
-CSRF_TRUSTED_ORIGINS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["https://drflive-production.up.railway.app"]
