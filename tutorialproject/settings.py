@@ -14,6 +14,11 @@ from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 import os
+from environ import Env
+import dj_database_url
+env=Env()
+Env.read_env()
+ENVIRONMENT=env('ENVIRONMENT',default='production')
 
 load_dotenv()
 
@@ -25,10 +30,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(=i$$5i4hn4=-n##dtyjuo3=6prg88tkeuf_%+n7jm+kg&!$)c'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if ENVIRONMENT=='development':
+    DEBUG = True
+else:
+    DEBUG=False
 
 ALLOWED_HOSTS = ['drflive-production.up.railway.app','127.0.0.1']
 
@@ -109,6 +117,10 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+POSTGRES_LOCALLY=False
+if ENVIRONMENT=='production' or POSTGRES_LOCALLY==True:
+    DATABASES['default']=dj_database_url.parse(env('DATABASE_URL'))
 
 
 # DATABASES = {
